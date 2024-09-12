@@ -1,4 +1,4 @@
-import { createImmutableStateInvariantMiddleware, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const CartSlice = createSlice({
   name: 'cart',
@@ -10,9 +10,13 @@ export const CartSlice = createSlice({
         const { name, image, cost } = action.payload;
         const existingItem = state.items.find(item => item.name === name);
         if (existingItem) {
+            console.log("existing");
             existingItem.quantity++;
+            
         } else {
+            console.log("add item");
             state.items.push({ name, image, cost, quantity: 1});
+            
         }
     },
     removeItem: (state, action) => {
