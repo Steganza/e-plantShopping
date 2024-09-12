@@ -258,9 +258,7 @@ const handleAddToCart = (product) => {
         [product.name]: true,
     }));
 };
-    //Total amount of plants in cart.. Used for cart Icon
-  let totalItems =1;
-
+    
     return (
         <div>
              <div className="navbar" style={styleObj}>
